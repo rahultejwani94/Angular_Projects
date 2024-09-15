@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let task of toDoList; trackBy: trackByFunction; index as index; even as even">
+       <span [class.strike]="task.isCompleted" [ngStyle]="{'color': even? 'blue':'green'}" ><input type="checkbox" (change)="taskClicked($event, task, index)">{{task.taskName}}</span>
+    </li>
+</ul>

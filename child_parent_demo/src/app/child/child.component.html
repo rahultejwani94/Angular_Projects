@@ -1,0 +1,6 @@
+<h1>{{item}}</h1>
+<hr>
+<label>Enter Item: </label>
+<input type="text" #itemInput (keydown.enter)="deleteItem(itemInput.value)">
+<button (click)="addItem(itemInput.value)">Add to parent's item list</button>
+<!-- <button (click)="deleteItem($event, itemInput.value)">Delete item from paren'ts item list</button> -->

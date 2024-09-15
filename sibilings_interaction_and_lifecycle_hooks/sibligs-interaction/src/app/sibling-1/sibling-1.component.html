@@ -1,0 +1,7 @@
+<h1>Sibling 1</h1>
+<div>
+  <label>Enter value: </label>
+  <input type="text" #inputbox />
+  <button (click)="sendData(inputbox.value)">Click Me</button>
+  <a [routerLink]="['/sibling-2']">Take me to sibling-2</a>
+</div>

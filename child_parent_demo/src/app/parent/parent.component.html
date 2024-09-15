@@ -1,0 +1,10 @@
+<label>Enter item Name</label>
+<input type="text" [(ngModel)]="itemValue">
+<app-child [item]="itemValue" (itemAddEvent)="addItem($event)" (itemDeleteEvent)="deleteItem($event)"></app-child>
+<hr>
+<h1>List--</h1>
+<ul>
+    <li *ngFor="let item of items">
+        {{item}}
+    </li>
+</ul>

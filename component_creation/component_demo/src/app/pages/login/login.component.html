@@ -1,0 +1,14 @@
+<div class="login-card">
+
+    <div class="card-title">
+        <h1>Login</h1>
+        <span>You don't have an account? <a routerLink="/signup">Sign up</a></span>
+    </div>
+    <form class="form-group" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <input name="email" type="email" formControlName="email" placeholder="Email" [ngClass]="{'border-input':  loginForm.get('email')?.invalid && loginForm.get('email')?.touched}">
+        <div class="email-error" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">invalid email</div>
+        <input type="password" formControlName="password" placeholder="Password">
+        <button [disabled]="!loginForm.valid" >Submit</button>
+    </form>
+
+</div>
