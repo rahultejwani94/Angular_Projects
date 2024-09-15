@@ -1,0 +1,1 @@
+This repository contains different Angular Projects for different concepts
