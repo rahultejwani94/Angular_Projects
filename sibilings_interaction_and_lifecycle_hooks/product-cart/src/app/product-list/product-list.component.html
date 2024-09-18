@@ -1,0 +1,15 @@
+<h1>Product Add Page</h1>
+<h2> Form Status: {{productForm.status}}</h2>
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <label for="name">Product Name: </label>
+  <input id="name" type="text" formControlName="name" />
+  <label for="desc">Product Description: </label>
+  <input id="desc" type="text" formControlName="desc" />
+  <label for="price">Product Price: </label>
+  <input id="price" type="text" formControlName="price" />
+  <label for="initial_quantity">Product Quantity: </label>
+  <input id="initial_quantity" type="text" formControlName="initial_quantity" />
+  <button type="submit" [disabled]="!productForm.valid">Submit</button>
+</form>
+
+<app-product-display></app-product-display>

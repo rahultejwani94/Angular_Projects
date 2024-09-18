@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "product-cart": {
+    "structural-directive-demo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/product-cart",
+            "outputPath": "dist/structural-directive-demo",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -64,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "product-cart:build:production"
+              "buildTarget": "structural-directive-demo:build:production"
             },
             "development": {
-              "buildTarget": "product-cart:build:development"
+              "buildTarget": "structural-directive-demo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -98,8 +98,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }

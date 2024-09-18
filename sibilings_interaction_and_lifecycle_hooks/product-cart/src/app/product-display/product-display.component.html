@@ -1,0 +1,26 @@
+<div [hidden]="productList.length == 0">
+<h1> ---------------- Products ---------</h1>
+<a [routerLink]="['/view-cart']"><button> ViewCart</button></a>
+<ul>
+    <li *ngFor="let product of productList; trackBy: trackByFunction; index as index">
+        <div *ngIf="product.initial_quantity">
+        <p> Product Id: 
+            {{product.id}}
+        </p>
+        <p> Product Name: 
+            {{product.name}}
+        </p>
+        <p *ngIf="product.desc"> Product Desc: 
+            {{product.desc}}
+        </p>
+        <p> Product Price: 
+            {{product.price}}
+        </p>
+        <p> Product Stock: 
+            {{product.initial_quantity}}
+        </p>
+        <button (click)="addProductToCart(index,product)">Add To Cart</button>
+    </div>
+    </li>
+</ul>
+

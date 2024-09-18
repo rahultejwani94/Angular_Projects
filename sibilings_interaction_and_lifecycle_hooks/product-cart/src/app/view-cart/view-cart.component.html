@@ -1,0 +1,35 @@
+<div *ngIf="isCheckOutDone; else checkOutIsPending">
+    <h1> Thanks for Shopping </h1>
+</div>
+<ng-template #checkOutIsPending>
+<div>
+<h1>Welcome to your Cart</h1>
+<div *ngIf="cartItems.length; else otherTemplate">
+<ul>
+    <li *ngFor="let item of cartItems; trackBy: trackByFunction; index as index">
+        <p> Product Id: 
+            {{item.id}}
+        </p>
+        <p> Product Name: 
+            {{item.name}}
+        </p>
+        <p *ngIf="item.desc"> Product Desc: 
+            {{item.desc}}
+        </p>
+        <p> Total Price: 
+            {{item.total_price}}
+        </p>
+        <p> Quantity: 
+            {{item.quantity}}
+        </p>
+        <button (click)="increment(item.id)">Add</button>
+        <button (click)="decrement(item.id)">Delete</button>
+    </li>
+</ul>
+<button (click)="checkOut()">CheckOut</button>
+</div>
+<ng-template #otherTemplate>
+    <div> Your cart is Empty</div>
+</ng-template>
+</div>
+</ng-template>

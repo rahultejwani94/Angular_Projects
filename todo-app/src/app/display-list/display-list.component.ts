@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class DisplayListComponent {
 
+  actionName: boolean = false;
     @Input()
   toDoList!: ToDo[];
 
@@ -24,4 +25,5 @@ export class DisplayListComponent {
     let isChecked=event.target.checked;
     this.taskClickedEvent.emit({isChecked, index})
   }
+
 }
